@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Affairs System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+      .hero-section {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1571260899304-425eee4c7efc");
+        background-size: cover;
+        background-position: center;
+        min-height: 420px;
+        color: white;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 33, 71, 0.6);
+        z-index: 2;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 3;
+      }
+      .navbar {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .about-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+      }
+      .about-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 6px 24px rgba(0, 33, 71, 0.08);
+      }
+      .footer-social a {
+        color: #ffc107;
+        margin: 0 8px;
+        font-size: 1.3rem;
+        transition: color 0.2s;
+      }
+      .footer-social a:hover {
+        color: #fff;
+      }
+      /* Navbar hover and animation */
+      .navbar-nav .nav-link {
+        position: relative;
+        transition: color 0.2s, background 0.2s;
+      }
+      .navbar-nav .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffc107;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link:focus {
+        color: #ffc107 !important;
+        background: rgba(255, 193, 7, 0.07);
+      }
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link:focus::after {
+        width: 100%;
+      }
+      .navbar-brand {
+        transition: transform 0.2s, color 0.2s;
+      }
+      .navbar-brand:hover {
+        color: #ffc107 !important;
+        transform: scale(1.06) rotate(-2deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Info Bar -->
+    <div
+      style="
+        background: linear-gradient(90deg, #002147 70%, #ffc107 100%);
+        color: #fff;
+        font-size: 14px;
+        padding: 6px 0;
+        letter-spacing: 0.02em;
+        box-shadow: 0 2px 8px rgba(0, 33, 71, 0.04);
+      "
+    >
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 18px;
+        "
+      >
+        <div>
+          <span
+            style="
+              margin-right: 18px;
+              display: inline-block;
+              vertical-align: middle;
+            "
+            ><i
+              class="bi bi-envelope"
+              style="margin-right: 4px; color: #ffc107"
+            ></i>
+            <span style="font-weight: 500">info@studentaffairs.com</span></span
+          >
+          <span style="display: inline-block; vertical-align: middle"
+            ><i
+              class="bi bi-telephone"
+              style="margin-right: 4px; color: #ffc107"
+            ></i>
+            <span style="font-weight: 500">123-456-7890</span></span
+          >
+        </div>
+        <div>
+          <a
+            href="login.html"
+            style="
+              color: #fff;
+              text-decoration: none;
+              margin-right: 10px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            ><i class="bi bi-box-arrow-in-right" style="margin-right: 3px"></i>
+            Login</a
+          >
+          <span style="color: #ffc107; font-weight: bold">/</span>
+          <a
+            href="register.html"
+            style="
+              color: #fff;
+              text-decoration: none;
+              margin-left: 10px;
+              font-weight: 500;
+              transition: color 0.2s;
+            "
+            ><i class="bi bi-person-plus" style="margin-right: 3px"></i>
+            Register</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-2">
+      <div class="container">
+        <a
+          class="navbar-brand fw-bold text-primary"
+          href="#"
+          style="font-size: 1.7rem"
+        >
+          <i class="bi bi-mortarboard-fill"></i> StudentAffairs
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="student.html">Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="department.html"
+                >Departments</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="reports.html">Reports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content py-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h1 class="display-4 fw-bold mb-3 text-warning text-shadow">
+              Manage Student Affairs Effectively
+            </h1>
+            <p class="lead mb-4 text-light text-shadow">
+              All-in-one system to track student data, performance and academic
+              records.
+            </p>
+            <a href="#" class="btn btn-warning btn-lg fw-bold px-4 shadow">
+              <i class="bi bi-info-circle"></i> Learn More
+            </a>
+          </div>
+          <div class="col-md-5 offset-md-1">
+            <div class="bg-white p-4 rounded-4 shadow-lg">
+              <h4
+                class="bg-warning text-center text-white py-2 rounded-3 mb-4 fw-bold"
+              >
+                <i class="bi bi-chat-dots"></i> Submit Your Query
+              </h4>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control border-warning"
+                    placeholder="Full Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control border-warning"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control border-warning"
+                    rows="3"
+                    placeholder="Your Message"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 fw-bold">
+                  <i class="bi bi-send"></i> Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container my-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-2">
+          <i class="bi bi-info-circle-fill text-warning"></i> About Us
+        </h2>
+        <p class="text-muted mx-auto" style="max-width: 600px">
+          We provide a smart, responsive student affairs system to simplify
+          university administration and enhance student support.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card about-card h-100 text-center p-3">
+            <div class="mb-3">
+              <i class="bi bi-bullseye display-5 text-warning"></i>
+            </div>
+            <h5 class="fw-bold">Goal-Oriented</h5>
+            <p class="text-muted">
+              Track academic performance and student progress in real time.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card about-card h-100 text-center p-3">
+            <div class="mb-3">
+              <i class="bi bi-bar-chart-fill display-5 text-warning"></i>
+            </div>
+            <h5 class="fw-bold">Data Insights</h5>
+            <p class="text-muted">
+              Use dashboards and reports to make data-driven decisions.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card about-card h-100 text-center p-3">
+            <div class="mb-3">
+              <i class="bi bi-shield-lock-fill display-5 text-warning"></i>
+            </div>
+            <h5 class="fw-bold">Secure & Scalable</h5>
+            <p class="text-muted">
+              Your student data is safely stored and can grow with your
+              institution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="text-center text-white py-4"
+      style="background-color: #002147"
+    >
+      <div class="container">
+        <div class="mb-2 footer-social">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-envelope"></i></a>
+        </div>
+        <p class="mb-0 small">
+          <i class="bi bi-c-circle"></i> 2025 StudentAffairs System. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
